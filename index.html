@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>MPI Seni Rupa Kelas 6 - Karya Seni Makrame Sederhana (Pertemuan 11)</title>
+<link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#eef6f2;--ink:#1d2742;--teal:#0e9f8e;--sun:#ffb703;--pink:#ef476f;--vio:#6c5ce7;--card:#fff;--line:#d5e3dc}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:64px}
+body{margin:0;font-family:Fredoka,'Trebuchet MS',system-ui,sans-serif;background:var(--bg);color:var(--ink);line-height:1.6;font-size:17px}
+#fx{position:fixed;inset:0;pointer-events:none;z-index:99}
+#bar{position:fixed;top:0;left:0;height:4px;width:0;background:linear-gradient(90deg,var(--teal),var(--sun),var(--pink));z-index:100}
+nav{position:sticky;top:0;z-index:50;background:rgba(255,255,255,.92);backdrop-filter:blur(8px);display:flex;gap:4px;padding:8px 12px;overflow-x:auto;border-bottom:2px solid var(--line)}
+nav a{color:var(--ink);text-decoration:none;padding:6px 14px;border-radius:99px;white-space:nowrap;font-weight:500;transition:.2s}
+nav a:hover{background:var(--sun);transform:translateY(-2px) rotate(-2deg)}
+header{background:var(--ink);color:#fff;text-align:center;padding:28px 16px 40px;overflow:hidden}
+header h1{font-size:clamp(28px,6vw,52px);margin:8px 0;line-height:1.15}
+header p{max-width:640px;margin:6px auto;opacity:.9}
+.hang{width:min(340px,80%);height:190px}
+.sw{transform-origin:50% 0;animation:sway 3.2s ease-in-out infinite alternate}
+.sw:nth-child(2n){animation-delay:-1s;animation-duration:2.6s}.sw:nth-child(3n){animation-delay:-2s}
+@keyframes sway{from{transform:rotate(-5deg)}to{transform:rotate(5deg)}}
+.pills{display:flex;flex-wrap:wrap;gap:8px;justify-content:center;margin-top:14px}
+.pill{background:rgba(255,255,255,.15);border-radius:99px;padding:3px 14px;font-size:14px}
+main{max-width:980px;margin:auto;padding:0 14px 60px}
+section{padding-top:36px}
+h2{font-size:clamp(24px,4vw,34px);margin:0 0 4px}
+h2 small{display:block;font-size:14px;color:var(--teal);font-weight:600}
+h3{margin:.4em 0}
+.card{background:var(--card);border-radius:20px;padding:20px;border:2px solid var(--line);box-shadow:0 6px 0 var(--line);margin:14px 0;transition:transform .15s,box-shadow .15s}
+.tilt{transform:perspective(700px) rotateX(var(--rx,0)) rotateY(var(--ry,0))}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(210px,1fr));gap:14px}
+.grid .card{margin:0}
+button,.btn{font:inherit;font-weight:600;border:0;border-radius:14px;padding:10px 18px;background:var(--teal);color:#fff;cursor:pointer;box-shadow:0 4px 0 #0a7468;transition:.12s;position:relative;overflow:hidden}
+button:hover{transform:translateY(-2px);filter:brightness(1.08)}
+button:active{transform:translateY(3px);box-shadow:0 1px 0 #0a7468}
+button:disabled{opacity:.45;cursor:not-allowed}
+button.alt{background:var(--vio);box-shadow:0 4px 0 #4a3dc0}button.sun{background:var(--sun);color:var(--ink);box-shadow:0 4px 0 #cc9000}button.pk{background:var(--pink);box-shadow:0 4px 0 #b8294d}
+button:focus-visible,a:focus-visible,textarea:focus-visible,.chip:focus-visible,.opt:focus-within{outline:3px solid var(--sun);outline-offset:2px}
+.rip{position:absolute;border-radius:50%;background:rgba(255,255,255,.55);transform:scale(0);animation:rp .6s linear;pointer-events:none}
+@keyframes rp{to{transform:scale(4);opacity:0}}
+.badge{display:inline-block;font-size:12px;padding:1px 10px;border-radius:99px;background:var(--sun);color:var(--ink);font-weight:600}
+.badge.o{background:#dcd7ff}
+.tool{cursor:pointer;text-align:center;font-size:15px}
+.tool .em{font-size:42px;display:block;transition:.3s}.tool:hover .em{transform:scale(1.25) rotate(-8deg)}
+.tool.on{border-color:var(--teal);background:#e6f7f4}
+.pop{animation:pop .4s cubic-bezier(.3,1.8,.5,1)}
+@keyframes pop{from{transform:scale(.6);opacity:0}to{transform:none;opacity:1}}
+.q5 li{margin:6px 0;cursor:pointer;padding:8px 12px;border-radius:12px;background:#f3f8f6;transition:.2s;list-style:none}
+.q5 li:hover{background:#fff3cc;transform:translateX(6px)}
+.q5 li.on{background:#d9f3ee}.q5 li .h{display:none;font-size:14px;color:var(--teal);margin-top:4px}.q5 li.on .h{display:block}
+.q5{padding:0}
+.steps{display:flex;gap:6px;flex-wrap:wrap;margin:8px 0}
+.dot{width:30px;height:30px;border-radius:50%;border:2px solid var(--line);background:#fff;font:600 13px Fredoka,sans-serif;cursor:pointer;display:grid;place-items:center;transition:.2s}
+.dot.on{background:var(--teal);color:#fff;border-color:var(--teal);transform:scale(1.2)}.dot.done{background:#bfeae3}
+.flex{display:flex;gap:10px;flex-wrap:wrap;align-items:center}
+.two{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+@media(max-width:700px){.two{grid-template-columns:1fr}}
+.simsvg{width:100%;max-height:380px;background:#fffdf6;border-radius:16px;border:2px dashed var(--line)}
+.msg{background:#fff3cc;border-radius:12px;padding:8px 12px;min-height:44px;margin:8px 0}
+.chk{display:flex;gap:8px;align-items:center;margin:2px 0;font-size:15px}
+textarea{width:100%;min-height:80px;border-radius:12px;border:2px solid var(--line);padding:10px;font:inherit}
+.chip{display:inline-block;padding:6px 12px;margin:4px;border-radius:12px;background:#e8e4ff;border:2px solid transparent;cursor:grab;user-select:none;transition:.15s}
+.chip.sel{border-color:var(--pink);transform:scale(1.08)}.chip.ok{background:#c8f2d4}.chip.bad{background:#ffd0d9}
+.zone{min-height:60px;border:2px dashed #9fb8ae;border-radius:14px;padding:6px;background:#f7fbf9;flex:1;min-width:160px}
+.zone.over{background:#fff3cc}.zone b{font-size:14px;display:block;color:var(--teal)}
+.opt{display:flex;gap:10px;align-items:center;padding:10px 14px;border:2px solid var(--line);border-radius:14px;margin:8px 0;cursor:pointer;transition:.15s;background:#fff}
+.opt:hover{border-color:var(--vio);transform:translateX(5px)}
+.opt.ok{background:#c8f2d4;border-color:#35b66a}.opt.bad{background:#ffd0d9;border-color:var(--pink)}
+.tag{font-size:12px;background:var(--vio);color:#fff;border-radius:99px;padding:1px 10px;margin-left:6px}
+.qt{font-size:19px;font-weight:500}
+.fb{margin-top:10px;padding:10px 14px;border-radius:12px;background:#e6f7f4}
+.pq{height:10px;background:#e1ece7;border-radius:9px;overflow:hidden;margin:8px 0}.pq i{display:block;height:100%;width:0;background:var(--pink);transition:.4s}
+table{border-collapse:collapse;width:100%;font-size:14px}td,th{border:1px solid var(--line);padding:5px 8px;text-align:left}th{background:#e6f7f4}
+details summary{cursor:pointer;font-weight:600}
+.big{font-size:56px;font-weight:700;color:var(--pink)}
+footer{text-align:center;padding:24px;color:#59647e;font-size:14px}
+@media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}
+</style>
+</head>
+<body>
+<canvas id="fx"></canvas><div id="bar"></div>
+<nav>
+<a href="#mulai">Mulai</a><a href="#materi">Materi</a><a href="#contoh">Contoh</a><a href="#simulasi">Simulasi</a><a href="#diskusi">Diskusi</a><a href="#latihan">Latihan Soal</a>
+</nav>
+<header id="mulai">
+<svg class="hang" viewBox="0 0 340 190" aria-hidden="true">
+<rect x="30" y="8" width="280" height="10" rx="5" fill="#c79a5b"/>
+<g id="hs"></g>
+</svg>
+<p>Seni Rupa Kelas VI &bull; Bab 4 &bull; Pertemuan ke-11</p>
+<h1>Membuat Karya Seni Makrame Sederhana</h1>
+<p>Pengertian makrame, alat dan bahan, dan langkah-langkah membuatnya. Belajar dengan cara mengalami, merefleksikan, lalu berkarya.</p>
+<div class="pills"><span class="pill">Berpikir kritis</span><span class="pill">Kreativitas</span><span class="pill">Kolaborasi</span><span class="pill">Kemandirian</span></div>
+</header>
+<main>
+
+<section>
+<div class="card tilt"><h3>Tujuan belajar hari ini</h3>
+<ol><li>Aku bisa menjelaskan pengertian makrame dan jenis-jenisnya.</li><li>Aku bisa menyebutkan alat dan bahan, dan memilih mana yang wajib atau opsional.</li><li>Aku bisa menyusun langkah membuat makrame dengan urutan yang benar.</li><li>Aku bisa menunjukkan sikap sabar, teliti, dan menghargai karya teman.</li></ol></div>
+<h3>Pertanyaan pemantik (klik, lalu ceritakan ke temanmu)</h3>
+<ul class="q5" id="pem"></ul>
+</section>
+
+<section id="materi">
+<h2><small>Memahami &amp; Berkesadaran</small>Materi Pembelajaran</h2>
+<h3>A. Pengertian makrame</h3>
+<div class="card tilt">
+<p><b>Makrame</b> adalah seni kriya yang dibuat dengan teknik <b>mengikat benang atau tali</b>. Tali disimpul-simpul sehingga membentuk pola geometris, hiasan, atau tekstur yang menarik. Makrame <b>tidak memakai alat tenun atau jarum</b>, jadi cukup tangan, tali, dan kesabaran.</p>
+<div class="grid">
+<div class="card"><b>Sejarah</b><br>Jejak awalnya ada pada budaya kuno Mesir, Persia, dan Arab. Puncak popularitasnya pada tahun 1970-an sebagai bagian dari gerakan seni kerajinan tangan.</div>
+<div class="card"><b>Bahan tali</b><br>Katun, nilon, rami, atau wol. Kamu bebas memilih sesuai proyekmu.</div>
+<div class="card"><b>Dibuat menjadi</b><br>Gantungan dinding, kerajinan tangan, perhiasan, dan aksesori rumah.</div>
+<div class="card"><b>Kenapa disebut seni kriya?</b><br>Karena dibuat dengan keterampilan tangan dan hasilnya indah sekaligus bisa dipakai.</div>
+</div></div>
+<h3>Jenis-jenis makrame (klik kartunya)</h3>
+<div class="flex" id="jenis"></div>
+<div class="msg pop" id="jd">Pilih salah satu jenis di atas untuk melihat ciri singkatnya.</div>
+
+<h3>B. Alat dan bahan (klik untuk melihat fungsinya)</h3>
+<div class="grid" id="alat"></div>
+<div class="msg" id="ad">Klik salah satu alat atau bahan.</div>
+
+<h3>C. Langkah-langkah membuat makrame</h3>
+<div class="card">
+<div class="steps" id="sd"></div>
+<h3 id="st"></h3><p id="sp"></p>
+<div class="flex"><button class="alt" id="sprev">Sebelumnya</button><button id="snext">Berikutnya</button></div>
+</div>
+</section>
+
+<section id="contoh">
+<h2><small>Contoh sederhana</small>Gantungan Kunci Makrame</h2>
+<div class="two">
+<div class="card tilt"><h3>Seperti mengikat tali sepatu</h3>
+<p>Kamu sudah pernah membuat simpul, yaitu saat mengikat tali sepatu atau tali pramuka. Makrame hanyalah simpul yang diulang dengan <b>pola rapi</b>. Jika simpulnya sama dan tarikannya sama kuat, hasilnya jadi motif cantik.</p>
+<p><b>Resep mudah (4 tali katun):</b></p>
+<ol><li>Potong 4 tali sama panjang, misalnya sepanjang satu depa tanganmu.</li><li>Lipat tali, lalu pasang pada cincin kunci dengan simpul kepala malaikat.</li><li>Ikat 4 simpul datar berurutan: kiri silang kanan, lalu kanan silang kiri.</li><li>Tambahkan satu manik di ujung bila ingin.</li><li>Potong ujung yang berlebih dan rapikan.</li></ol></div>
+<div class="card tilt"><h3>Simpul datar, langkah demi langkah</h3>
+<svg viewBox="0 0 260 230" id="knotsvg" style="width:100%"></svg>
+<div class="flex"><button class="sun" id="kplay">Putar animasi</button><span id="kcap">Tekan tombol untuk melihat simpulnya.</span></div></div>
+</div>
+</section>
+
+<section id="simulasi">
+<h2><small>Simulasi interaktif</small>Ayo Rangkai Gantungan Dinding</h2>
+<p>Ikuti urutan langkah. Jika urutannya keliru, simulator akan memberi petunjuk.</p>
+<div class="two">
+<div><svg id="simsvg" class="simsvg" viewBox="0 0 400 340"></svg></div>
+<div class="card">
+<div class="flex"><label>Jumlah tali: <select id="sn"><option>4</option><option selected>6</option><option>8</option></select></label>
+<label>Warna: <select id="sc"><option value="#0e9f8e">Hijau tosca</option><option value="#ef476f">Merah muda</option><option value="#6c5ce7">Ungu</option><option value="#e9a100">Kuning tua</option></select></label></div>
+<div class="flex" style="margin-top:10px">
+<button data-s="1">1. Potong &amp; siapkan tali</button>
+<button data-s="2" class="alt">2. Gantung tali</button>
+<button data-s="3" class="sun">3. Ikat baris simpul</button>
+<button data-s="4" class="pk">4. Tambah manik</button>
+<button data-s="5">5. Potong &amp; rapikan</button>
+<button data-s="0" class="alt">Ulang</button></div>
+<div class="msg" id="sm">Mulai dari langkah 1.</div>
+<div id="schk"></div></div>
+</div>
+</section>
+
+<section id="diskusi">
+<h2><small>Merefleksikan &amp; Menggembirakan</small>Diskusi Mandiri dan Kelompok</h2>
+<div class="two">
+<div class="card"><h3>Diskusi mandiri</h3>
+<p>1. Ceritakan di mana kamu pernah melihat karya makrame.</p><textarea id="d1" placeholder="Tulis jawabanmu..."></textarea>
+<p>2. Jenis makrame mana yang ingin kamu buat, dan mengapa?</p><textarea id="d2" placeholder="Tulis jawabanmu..."></textarea></div>
+<div class="card"><h3>Diskusi kelompok (4 anak)</h3>
+<p>Bagi peran: <span class="badge">Ketua</span> <span class="badge">Pencatat</span> <span class="badge">Pengatur bahan</span> <span class="badge">Penyaji</span></p>
+<p>Tugas: rancang satu gantungan dinding sederhana. Tentukan jenis tali, warna, jumlah tali, dan siapa mengerjakan apa.</p>
+<textarea id="d3" placeholder="Hasil kesepakatan kelompok..."></textarea></div></div>
+<div class="card"><h3>Cek sikapku (refleksi)</h3><div id="rf"></div>
+<button class="sun" id="rsum">Buat ringkasan refleksi</button><pre id="rout" style="white-space:pre-wrap"></pre></div>
+</section>
+
+<section id="latihan">
+<h2><small>Berlatih soal</small>15 Soal Latihan</h2>
+<details class="card"><summary>Analisis soal (dilakukan sebelum soal dibuat)</summary>
+<p>Soal disusun dari tujuan pembelajaran dan materi buku. Bentuk soal dipilih sesuai tingkat berpikir: pilihan tunggal untuk mengingat dan memahami, pilihan ganda kompleks untuk memilah beberapa jawaban benar, benar-salah untuk mengecek miskonsepsi, dan seret-lepas untuk menggolongkan dan mengurutkan.</p>
+<div style="overflow-x:auto"><table><tr><th>Indikator</th><th>Level</th><th>Bentuk</th><th>No</th></tr>
+<tr><td>Menyebutkan pengertian dan sejarah makrame</td><td>C1</td><td>Pilihan tunggal</td><td>1, 2</td></tr>
+<tr><td>Menjelaskan fungsi alat; menerapkan pemilihan alat untuk situasi</td><td>C2, C3</td><td>Pilihan tunggal</td><td>3, 4</td></tr>
+<tr><td>Menganalisis penyebab hasil kurang rapi</td><td>C4</td><td>Pilihan tunggal</td><td>5</td></tr>
+<tr><td>Mengidentifikasi bahan, alat opsional, dan sikap berkarya</td><td>C1, C2, C4</td><td>Pilihan ganda</td><td>6, 7, 8</td></tr>
+<tr><td>Meluruskan miskonsepsi (tenun, lem, panjang tali)</td><td>C1, C2, C4</td><td>Benar-Salah</td><td>9, 10, 11</td></tr>
+<tr><td>Menggolongkan alat, mengurutkan langkah, membedakan alat dan bahan, tahap kerja</td><td>C2, C3, C4</td><td>Seret-lepas</td><td>12 - 15</td></tr></table></div></details>
+<div class="pq"><i id="qp"></i></div>
+<div class="card" id="qb"></div>
+</section>
+</main>
+<footer>MPI Seni Rupa SD/MI Kelas VI &bull; Pendekatan pembelajaran mendalam: memahami, mengaplikasi, merefleksi</footer>
+
+<script>
+const $=s=>document.querySelector(s),$$=s=>[...document.querySelectorAll(s)];
+/* hero */
+(()=>{let h='';[70,115,170,225,270].forEach((x,i)=>{h+=`<g class="sw" style="transform-origin:${x}px 18px"><line x1="${x}" y1="18" x2="${x}" y2="${150+i%2*18}" stroke="${['#ffb703','#0e9f8e','#ef476f','#9b8cff','#ffb703'][i]}" stroke-width="7" stroke-linecap="round"/><circle cx="${x}" cy="60" r="9" fill="#fff" opacity=".9"/><circle cx="${x}" cy="${150+i%2*18}" r="6" fill="#ffb703"/></g>`});$('#hs').innerHTML=h})();
+/* pemantik */
+['Apa yang kamu ketahui tentang makrame?','Mengapa makrame disebut seni kriya?','Alat apa saja yang kamu kenal untuk membuat makrame?','Di mana kamu pernah melihat karya makrame?','Bagaimana perasaanmu saat membuat makrame sendiri?'].forEach((t,i)=>{const l=document.createElement('li');l.innerHTML=`${i+1}. ${t}<div class="h">Pikirkan dulu, lalu ceritakan ke teman sebangkumu.</div>`;l.onclick=()=>l.classList.toggle('on');$('#pem').append(l)});
+/* jenis */
+const J={'Makrame dasar':'Memakai simpul-simpul paling dasar. Cocok untuk pemula.','Makrame berpihak':'Satu sisi hasilnya dibuat menonjol sebagai bagian depan karya.','Makrame berlapis':'Susunan simpul dibuat bertingkat sehingga tampak bersusun.','Makrame mikro':'Memakai tali yang sangat kecil dengan simpul yang halus.','Makrame beadwork':'Simpul dipadukan dengan manik-manik.','Makrame freeform':'Pola bebas, tidak harus simetris, mengikuti imajinasi.','Makrame hiasan dinding':'Karya untuk digantung di dinding sebagai dekorasi.','Makrame tekstil':'Simpul dipakai untuk membuat tekstur pada benda berbahan tekstil.'};
+Object.keys(J).forEach(k=>{const b=document.createElement('button');b.className='alt';b.textContent=k;b.onclick=()=>{$('#jd').innerHTML=`<b>${k}:</b> ${J[k]}`;$('#jd').classList.remove('pop');void $('#jd').offsetWidth;$('#jd').classList.add('pop')};$('#jenis').append(b)});
+/* alat bahan */
+const A=[['🧵','Benang atau tali','Bahan dasar. Boleh katun, nilon, rami, wol, atau benang lain sesuai proyek.',1],['✂️','Gunting','Harus tajam agar memotong tepat dan benang tidak kusut atau merenggang.',1],['📋','Papan kerja / gantungan','Menjaga tali tetap teratur. Papan dari karton atau busa; gantungan untuk menggantung proyek saat bekerja.',1],['📿','Rangkaian bead','Manik-manik dan benang yang cocok untuk menambah hiasan (threading bead).',0],['📎','Penyekat','Dipakai pada proyek besar atau rumit untuk memisahkan tali agar tetap teratur.',0],['🧴','Lem','Mengencangkan simpul atau mengamankan ujung benang agar rapi.',0],['📄','Pola','Salinan pola dari buku atau tutorial online sebagai panduan.',0],['🪡','Kait atau jarum','Membantu memasukkan benang melalui manik-manik atau elemen lain.',0],['⛓️','Rantai poni','Untuk menggantung karya yang sudah selesai di dinding atau sebagai dekorasi.',0]];
+A.forEach(a=>{const d=document.createElement('div');d.className='card tool tilt';d.tabIndex=0;d.innerHTML=`<span class="em">${a[0]}</span><b>${a[1]}</b><br><span class="badge ${a[3]?'':'o'}">${a[3]?'Utama':'Opsional'}</span>`;const f=()=>{$$('.tool').forEach(x=>x.classList.remove('on'));d.classList.add('on');$('#ad').innerHTML=`<b>${a[1]}:</b> ${a[2]}`};d.onclick=f;d.onkeydown=e=>e.key=='Enter'&&f();$('#alat').append(d)});
+/* langkah */
+const S=[['Persiapan bahan dan alat','Pilih benang sesuai proyek. Potong sepanjang yang direncanakan, lalu siapkan gunting, papan kerja, atau gantungan.'],['Pola atau desain','Jika memakai pola, pahami dulu langkahnya. Jika merancang sendiri, tentukan desain dan ukuran akhir.'],['Menggantung kerja','Gantung proyek pada gantungan pekerjaan supaya tali mudah dijangkau.'],['Simpul awal','Buat simpul dasar seperti simpul datar atau simpul kepala malaikat.'],['Membuat simpul','Ikuti pola untuk membuat simpul ganda, simpul ikat, atau lark\'s head sesuai kebutuhan.'],['Mengulangi dan membentuk pola','Terus bersimpul dengan pola yang konsisten dan rapikan benang selagi bekerja.'],['Menambahkan manik atau hiasan (opsional)','Ikat manik pada benang dengan benang tambahan sesuai desain.'],['Menyelesaikan ujung','Selesaikan ujung dengan simpul penyelesaian atau lem agar aman.'],['Potong dan rapikan','Potong ujung benang yang berlebih sampai terlihat rapi dan teratur.'],['Menggantung karya seni','Pasang rantai poni atau tali penggantung di bagian atas karya.'],['Pamerkan atau gunakan','Pajang sebagai dekorasi rumah, hadiah, atau aksesori pribadi.']];
+let si=0;function rs(){$('#sd').innerHTML=S.map((_,i)=>`<div class="dot ${i==si?'on':i<si?'done':''}" onclick="si=${i};rs()">${i+1}</div>`).join('');$('#st').textContent=`Langkah ${si+1}: ${S[si][0]}`;$('#sp').textContent=S[si][1];$('#sp').classList.remove('pop');void $('#sp').offsetWidth;$('#sp').classList.add('pop');$('#sprev').disabled=!si;$('#snext').disabled=si==S.length-1}
+$('#sprev').onclick=()=>{si--;rs()};$('#snext').onclick=()=>{si++;rs()};rs();
+/* animasi simpul datar */
+const KC=['Empat tali sejajar. Tali 1 dan 4 adalah tali kerja.','Tali 1 disilang di atas tali tengah, di bawah tali 4.','Tali 4 melewati bawah tali tengah, lalu keluar lewat lubang tali 1. Tarik!','Sekarang balik arah: tali 4 disilang dulu. Simpul datar jadi rapi.'];
+function kdraw(p){const x=[70,105,155,190];let h='<rect x="40" y="10" width="180" height="8" rx="4" fill="#c79a5b"/>';x.forEach((v,i)=>{h+=`<line x1="${v}" y1="18" x2="${v}" y2="${p>=3&&(i==1||i==2)||p>=1?200:200}" stroke="${i==0||i==3?'#ef476f':'#0e9f8e'}" stroke-width="7" stroke-linecap="round"/>`});
+if(p>=1)h+='<path d="M70 70 Q130 55 190 85" stroke="#ef476f" stroke-width="7" fill="none" stroke-linecap="round" class="pop"/>';
+if(p>=2)h+='<path d="M190 100 Q130 115 70 105" stroke="#ef476f" stroke-width="7" fill="none" stroke-linecap="round" class="pop"/>';
+if(p>=3)h+='<rect x="55" y="120" width="150" height="30" rx="12" fill="#ffb703" class="pop"/><text x="130" y="141" text-anchor="middle" font-size="14" font-family="Fredoka,sans-serif" fill="#1d2742">simpul datar</text>';
+$('#knotsvg').innerHTML=h;$('#kcap').textContent=KC[p]}
+kdraw(0);let kp;$('#kplay').onclick=()=>{clearInterval(kp);let p=0;kdraw(0);kp=setInterval(()=>{p++;kdraw(p);if(p>=3)clearInterval(kp)},1400)};
+/* simulasi */
+const sim={s:0,rows:0,beads:0,trim:0,len:[]};const SM=['Mulai dari langkah 1: potong dan siapkan tali.','Tali siap. Lanjut gantung tali dengan simpul kepala malaikat.','Tali tergantung. Ikat baris simpul datar (boleh sampai 5 baris).','Manik dipasang. Boleh tambah simpul lagi atau lanjut merapikan.','Karya selesai! Rapi, seimbang, dan siap dipajang.'];
+function msg(t){$('#sm').textContent=t}
+function draw(){const n=+$('#sn').value,col=$('#sc').value,xs=[...Array(n)].map((_,i)=>50+i*300/(n-1)),g=300/(n-1);
+let h='<rect x="30" y="22" width="340" height="9" rx="4" fill="#8a6a43"/>';
+if(!sim.s)h+='<text x="200" y="170" text-anchor="middle" fill="#59647e" font-family="Fredoka,sans-serif">Belum ada tali. Tekan langkah 1.</text>';
+if(sim.s>=1){if(sim.len.length!=n)sim.len=xs.map(()=>275+Math.random()*50);
+xs.forEach((x,i)=>{const y0=sim.s>=2?31:70,y1=sim.trim?285:sim.len[i];h+=`<line x1="${x}" y1="${y0}" x2="${x}" y2="${y1}" stroke="${col}" stroke-width="5" stroke-linecap="round" opacity=".92"/>`;if(sim.s>=2)h+=`<circle cx="${x}" cy="36" r="8" fill="none" stroke="${col}" stroke-width="4" class="pop"/>`});}
+for(let r=0;r<sim.rows;r++)for(let k=r%2;k+1<n;k+=2){const cx=(xs[k]+xs[k+1])/2,w=Math.min(34,g*.85);h+=`<rect x="${cx-w/2}" y="${62+r*26}" width="${w}" height="20" rx="8" fill="${col}" stroke="#1d2742" stroke-opacity=".35" stroke-width="2" ${r==sim.rows-1?'class="pop" style="transform-origin:'+cx+'px '+(72+r*26)+'px"':''}/>`}
+if(sim.beads)xs.forEach(x=>h+=`<circle cx="${x}" cy="${62+sim.rows*26+16}" r="8" fill="#ffb703" stroke="#cc9000" stroke-width="2" class="pop" style="transform-origin:${x}px ${62+sim.rows*26+16}px"/>`);
+$('#simsvg').innerHTML=h;
+const L=['Potong tali','Gantung tali','Simpul pola','Manik (opsional)','Rapikan ujung'],D=[sim.s>=1,sim.s>=2,sim.rows>0,sim.beads>0,sim.trim>0];
+$('#schk').innerHTML=L.map((t,i)=>`<div class="chk">${D[i]?'✅':'⬜'} ${t}</div>`).join('')}
+$$('[data-s]').forEach(b=>b.onclick=()=>{const s=+b.dataset.s;
+if(s==0){Object.assign(sim,{s:0,rows:0,beads:0,trim:0,len:[]});msg(SM[0])}
+else if(s==1){if(sim.s>=1)return msg('Tali sudah disiapkan. Lanjut langkah berikutnya, atau tekan Ulang.');sim.s=1;msg(SM[1])}
+else if(s==2){if(sim.s<1)return msg('Belum bisa. Potong dan siapkan tali dulu (langkah 1).');if(sim.s>=2)return msg('Tali sudah tergantung.');sim.s=2;msg(SM[2])}
+else if(s==3){if(sim.s<2)return msg('Belum bisa. Gantung tali dulu pada gantungan (langkah 2).');if(sim.trim)return msg('Karya sudah dirapikan.');if(sim.rows>=5)return msg('Sudah 5 baris, cukup! Lanjut merapikan.');sim.rows++;msg('Baris ke-'+sim.rows+' selesai. Simpul dibuat konsisten, tarikan sama kuat.')}
+else if(s==4){if(sim.rows<1)return msg('Belum bisa. Buat minimal satu baris simpul dulu.');sim.beads=1;msg(SM[3]);burst(innerWidth/2,innerHeight/2,8)}
+else if(s==5){if(sim.rows<1)return msg('Belum bisa. Buat simpul pola dulu sebelum dirapikan.');sim.trim=1;msg(SM[4]);burst(innerWidth/2,innerHeight/2,30)}
+draw()});
+$('#sn').onchange=$('#sc').onchange=()=>{sim.len=[];draw()};draw();msg(SM[0]);
+/* diskusi */
+const R=['Saya sabar saat membuat simpul makrame.','Saya teliti mengikuti langkah-langkahnya.','Saya tertarik mencoba pola yang baru.','Saya percaya diri menunjukkan hasil karya.','Saya menghargai karya makrame teman.'];
+$('#rf').innerHTML=R.map((t,i)=>`<div class="chk"><span style="flex:1">${t}</span><select id="r${i}"><option>Selalu</option><option>Sering</option><option>Kadang-kadang</option><option>Tidak pernah</option></select></div>`).join('');
+$('#rsum').onclick=()=>{$('#rout').textContent=`Refleksi saya\n- Pernah melihat makrame: ${$('#d1').value||'-'}\n- Jenis yang ingin kubuat: ${$('#d2').value||'-'}\n- Rancangan kelompok: ${$('#d3').value||'-'}\n`+R.map((t,i)=>`- ${t} ${$('#r'+i).value}`).join('\n');burst(innerWidth/2,innerHeight/2,20)};
+/* soal */
+const TN={sc:'Pilihan tunggal',mc:'Pilihan ganda',tf:'Benar-Salah',dd:'Seret-lepas'};
+const Q=[
+{t:'sc',lv:'C1',q:'Makrame adalah seni kriya yang dibuat dengan cara...',o:['Menenun benang dengan alat tenun','Mengikat tali dengan simpul tanpa alat tenun atau jarum','Melukis di atas kain','Menjahit kain dengan jarum'],a:1,e:'Makrame memakai teknik ikat dan simpul, tanpa alat tenun atau jarum.'},
+{t:'sc',lv:'C1',q:'Makrame mencapai puncak popularitas pada tahun...',o:['1770-an','1870-an','1970-an','2070-an'],a:2,e:'Makrame populer pada tahun 1970-an dalam gerakan seni kerajinan tangan.'},
+{t:'sc',lv:'C2',q:'Papan kerja atau gantungan pekerjaan berfungsi untuk...',o:['Memotong tali','Menjaga tali tetap teratur selama bekerja','Mengencangkan simpul','Menghias karya'],a:1,e:'Papan kerja membantu tali tetap teratur selama pembuatan.'},
+{t:'sc',lv:'C3',q:'Dinda sudah selesai membuat makrame dan ingin memajangnya di dinding. Benda apa yang paling tepat dipasang di bagian atas karyanya?',o:['Penyekat','Rantai poni atau tali penggantung','Jarum','Lem saja'],a:1,e:'Rantai poni atau tali penggantung dipasang di atas karya agar dapat digantung.'},
+{t:'sc',lv:'C4',q:'Setelah dipotong, ujung tali Rani berserabut dan merenggang. Penyebab paling mungkin adalah...',o:['Warna tali terlalu cerah','Guntingnya kurang tajam','Papan kerja terlalu besar','Terlalu banyak manik'],a:1,e:'Gunting harus tajam agar benang tidak kusut atau merenggang.'},
+{t:'mc',lv:'C1',q:'Pilih SEMUA bahan tali yang bisa dipakai untuk makrame!',o:['Katun','Rami','Kawat besi','Wol','Kaca'],a:[0,1,3],e:'Tali makrame bisa dari katun, nilon, rami, atau wol.'},
+{t:'mc',lv:'C2',q:'Pilih SEMUA alat atau bahan yang sifatnya opsional (tidak wajib)!',o:['Lem','Gunting','Kait atau jarum','Pola'],a:[0,2,3],e:'Lem, kait atau jarum, dan pola bersifat opsional. Gunting wajib untuk memotong tali.'},
+{t:'mc',lv:'C4',q:'Pilih SEMUA sikap yang tepat saat membuat makrame!',o:['Sabar saat membuat simpul','Teliti mengikuti langkah','Asal selesai walau simpul tidak rapi','Menghargai karya teman'],a:[0,1,3],e:'Makrame membutuhkan kesabaran dan ketelitian, serta sikap menghargai karya orang lain.'},
+{t:'tf',lv:'C1',q:'Makrame dibuat dengan menenun benang menggunakan alat tenun.',o:['Benar','Salah'],a:1,e:'Makrame dibuat dengan simpul, tanpa alat tenun.'},
+{t:'tf',lv:'C2',q:'Lem boleh dipakai untuk mengamankan ujung benang supaya rapi.',o:['Benar','Salah'],a:0,e:'Lem opsional untuk mengencangkan simpul atau mengamankan ujung benang.'},
+{t:'tf',lv:'C4',q:'Tali tidak perlu dipotong sama panjang, karena simpulnya pasti tetap rapi.',o:['Benar','Salah'],a:1,e:'Tali yang tidak sama panjang membuat pola tidak seimbang dan sulit dirapikan.'},
+{t:'dd',lv:'C2',q:'Seret setiap benda ke kelompok yang benar!',z:['Utama','Opsional'],i:[['Benang atau tali',0],['Gunting',0],['Papan kerja',0],['Lem',1],['Rantai poni',1],['Kait atau jarum',1]],e:'Tali, gunting, dan papan kerja adalah perlengkapan utama. Lem, rantai poni, dan kait bersifat opsional.'},
+{t:'dd',lv:'C3',q:'Urutkan langkah membuat makrame dari awal sampai akhir!',z:['Langkah 1','Langkah 2','Langkah 3','Langkah 4','Langkah 5'],i:[['Siapkan dan potong tali',0],['Gantung tali pada gantungan kerja',1],['Buat simpul awal',2],['Ulangi simpul membentuk pola',3],['Potong dan rapikan ujung',4]],e:'Urutan: persiapan, menggantung, simpul awal, mengulang pola, merapikan ujung.'},
+{t:'dd',lv:'C2',q:'Golongkan benda berikut menjadi alat atau bahan!',z:['Alat','Bahan'],i:[['Gunting',0],['Kait',0],['Tali katun',1],['Manik-manik',1],['Benang rami',1],['Papan kerja',0]],e:'Alat membantu mengerjakan (gunting, kait, papan). Bahan menjadi bagian karya (tali, manik, benang).'},
+{t:'dd',lv:'C4',q:'Kelompokkan kegiatan ini ke dalam tahap kerja yang tepat!',z:['Persiapan','Pengerjaan','Penyelesaian'],i:[['Memotong tali sesuai panjang',0],['Membuat simpul datar',1],['Menambah manik',1],['Memotong ujung berlebih',2],['Memasang rantai poni',2],['Menyiapkan gunting',0]],e:'Persiapan: siapkan tali dan alat. Pengerjaan: simpul dan hiasan. Penyelesaian: rapikan dan pasang gantungan.'}];
+let qi=0,res=[],checked=false,sel=null,pl={};
+const sh=a=>a.map(v=>[Math.random(),v]).sort((a,b)=>a[0]-b[0]).map(v=>v[1]);
+function rq(){checked=false;sel=null;const q=Q[qi];$('#qp').style.width=(qi/15*100)+'%';
+let h=`<div>Soal ${qi+1} dari 15<span class="tag">${TN[q.t]}</span><span class="tag">${q.lv}</span></div><p class="qt">${q.q}</p>`;
+if(q.t=='dd'){pl={};q.ord=sh(q.i.map((_,i)=>i));h+='<div id="pool"></div><div class="flex" id="zones" style="align-items:stretch;margin-top:10px"></div><p style="font-size:14px">Seret benda ke kotak. Di layar sentuh: ketuk benda, lalu ketuk kotak.</p>'}
+else h+=q.o.map((o,i)=>`<label class="opt"><input type="${q.t=='mc'?'checkbox':'radio'}" name="o" value="${i}"><span>${o}</span></label>`).join('');
+h+='<div class="flex"><button id="chk">Periksa jawaban</button><button class="alt" id="nx" disabled>'+(qi==14?'Lihat hasil':'Soal berikutnya')+'</button></div><div id="fb"></div>';
+$('#qb').innerHTML=h;$('#chk').onclick=chk;$('#nx').onclick=()=>{qi++;qi<15?rq():fin()};if(q.t=='dd')rdd()}
+function rdd(){const q=Q[qi];
+$('#pool').innerHTML='<div class="zone" data-z="p" style="min-height:50px"><b>Benda</b>'+q.ord.filter(i=>pl[i]===undefined).map(i=>ch(i)).join('')+'</div>';
+$('#zones').innerHTML=q.z.map((z,k)=>`<div class="zone" data-z="${k}"><b>${z}</b>${q.ord.filter(i=>pl[i]===k).map(i=>ch(i)).join('')}</div>`).join('');
+$$('#qb .chip').forEach(c=>{c.ondragstart=e=>{e.dataTransfer.setData('t',c.dataset.i);sel=+c.dataset.i};c.onclick=e=>{e.stopPropagation();if(checked)return;const i=+c.dataset.i;if(pl[i]!==undefined&&sel!==i){delete pl[i];sel=null;return rdd()}sel=sel===i?null:i;rdd()}});
+$$('#qb .zone').forEach(z=>{const put=i=>{if(checked||i==null)return;const k=z.dataset.z;if(k=='p')delete pl[i];else pl[i]=+k;sel=null;rdd()};z.ondragover=e=>{e.preventDefault();z.classList.add('over')};z.ondragleave=()=>z.classList.remove('over');z.ondrop=e=>{e.preventDefault();put(+e.dataTransfer.getData('t'))};z.onclick=()=>put(sel)})}
+function ch(i){const q=Q[qi];return `<span class="chip ${sel===i?'sel':''}" draggable="${!checked}" data-i="${i}" tabindex="0">${q.i[i][0]}</span>`}
+function chk(){const q=Q[qi];let ok=false;
+if(q.t=='dd'){if(Object.keys(pl).length<q.i.length)return $('#fb').innerHTML='<div class="fb" style="background:#fff3cc">Letakkan semua benda ke kotak dulu ya.</div>';ok=q.i.every((it,i)=>pl[i]===it[1]);checked=true;$$('#qb .chip').forEach(c=>c.classList.add(Q[qi].i[c.dataset.i][1]===pl[c.dataset.i]?'ok':'bad'))}
+else{const v=$$('[name=o]:checked').map(x=>+x.value);if(!v.length)return $('#fb').innerHTML='<div class="fb" style="background:#fff3cc">Pilih jawabanmu dulu ya.</div>';
+const a=[].concat(q.a);ok=v.length==a.length&&a.every(x=>v.includes(x));checked=true;
+$$('.opt').forEach((l,i)=>{const inp=l.querySelector('input');inp.disabled=true;if(a.includes(i))l.classList.add('ok');else if(v.includes(i))l.classList.add('bad')})}
+res[qi]=ok;$('#chk').disabled=true;$('#nx').disabled=false;
+$('#fb').innerHTML=`<div class="fb pop">${ok?'🎉 Benar! ':'Belum tepat. '}${q.e}</div>`;if(ok)burst(innerWidth/2,innerHeight/2,14)}
+function fin(){$('#qp').style.width='100%';const c=res.filter(Boolean).length,sc=Math.round(c/15*100);
+const w=Q.map((q,i)=>res[i]?'':`<li>Soal ${i+1}: ${q.e}</li>`).join('');
+$('#qb').innerHTML=`<div style="text-align:center"><div class="big pop">${sc}</div><p>Benar ${c} dari 15 soal. ${sc>=80?'Hebat! Kamu siap membuat makrame. 🌟':sc>=60?'Bagus! Baca lagi materi yang masih keliru.':'Ayo pelajari materi lagi, lalu coba kembali.'}</p></div>${w?'<h3>Yang perlu dipelajari lagi</h3><ul>'+w+'</ul>':''}<button id="rs">Ulangi latihan</button>`;
+$('#rs').onclick=()=>{qi=0;res=[];rq()};if(sc>=80)burst(innerWidth/2,innerHeight/3,80)}
+rq();
+/* efek mouse */
+const cv=$('#fx'),cx=cv.getContext('2d'),P=[],cols=['#0e9f8e','#ffb703','#ef476f','#6c5ce7'],rm=matchMedia('(prefers-reduced-motion:reduce)').matches;
+function sz(){cv.width=innerWidth;cv.height=innerHeight}sz();addEventListener('resize',sz);
+function burst(x,y,n){if(rm)return;for(let i=0;i<n;i++){const a=Math.random()*6.28,s=2+Math.random()*5;P.push({x,y,vx:Math.cos(a)*s,vy:Math.sin(a)*s-2,l:1,r:3+Math.random()*4,c:cols[i%4],g:.12})}}
+addEventListener('pointermove',e=>{if(rm)return;P.push({x:e.clientX,y:e.clientY,vx:(Math.random()-.5),vy:Math.random()*.8,l:.9,r:4+Math.random()*3,c:cols[Math.random()*4|0],g:0})});
+addEventListener('click',e=>burst(e.clientX,e.clientY,8));
+(function loop(){cx.clearRect(0,0,cv.width,cv.height);for(let i=P.length-1;i>=0;i--){const p=P[i];p.x+=p.vx;p.y+=p.vy;p.vy+=p.g;p.l-=.03;if(p.l<=0){P.splice(i,1);continue}cx.globalAlpha=p.l;cx.fillStyle=p.c;cx.beginPath();cx.arc(p.x,p.y,p.r*p.l,0,6.28);cx.fill()}requestAnimationFrame(loop)})();
+document.addEventListener('pointermove',e=>{const t=e.target.closest('.tilt');$$('.tilt').forEach(x=>{if(x!==t){x.style.setProperty('--rx','0deg');x.style.setProperty('--ry','0deg')}});if(t&&!rm){const r=t.getBoundingClientRect();t.style.setProperty('--ry',((e.clientX-r.left)/r.width-.5)*6+'deg');t.style.setProperty('--rx',(.5-(e.clientY-r.top)/r.height)*6+'deg')}});
+document.addEventListener('click',e=>{const b=e.target.closest('button');if(!b)return;const r=b.getBoundingClientRect(),s=document.createElement('span');s.className='rip';const d=Math.max(r.width,r.height);s.style.cssText=`width:${d}px;height:${d}px;left:${e.clientX-r.left-d/2}px;top:${e.clientY-r.top-d/2}px`;b.append(s);setTimeout(()=>s.remove(),600)});
+addEventListener('scroll',()=>{$('#bar').style.width=scrollY/(document.documentElement.scrollHeight-innerHeight)*100+'%'});
+</script>
+</body>
+</html>
